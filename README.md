@@ -90,3 +90,6 @@ Visit [Build and run your first application with cmake](http://kabiliravi.com/in
 gcc -I/home/ovidiu/c++/ffmpeg/include/ -L/home/ovidiu/c++/ffmpeg/lib/ main.c \
 -lavcodec -lavformat -lavfilter -lavdevice -lswresample -lswscale -lavutil \
 -o stream
+
+
+To run sdl app from docker: docker run -e DISPLAY=192.168.1.191:0 --privileged lvgl
