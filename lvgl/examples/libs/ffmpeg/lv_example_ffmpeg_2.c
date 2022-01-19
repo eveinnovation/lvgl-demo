@@ -10,7 +10,7 @@ void lv_example_ffmpeg_2(void)
     /*birds.mp4 is downloaded from http://www.videezy.com (Free Stock Footage by Videezy!)
      *https://www.videezy.com/abstract/44864-silhouettes-of-birds-over-the-sunset*/
     lv_obj_t * player = lv_ffmpeg_player_create(lv_scr_act());
-    lv_ffmpeg_player_set_src(player, "/home/ovidiu/c++/lvgl-demo/lvgl/examples/libs/ffmpeg/sample_1280x720_surfing_with_audio.ts");
+    lv_ffmpeg_player_set_src(player, "http://192.168.1.208:3333/stream");
     lv_ffmpeg_player_set_auto_restart(player, true);
     lv_ffmpeg_player_set_cmd(player, LV_FFMPEG_PLAYER_CMD_START);
     lv_obj_center(player);

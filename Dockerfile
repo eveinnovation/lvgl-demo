@@ -7,7 +7,7 @@
 # To do GUI forwarding on linux, the following may work (easiest method, but unsafe)
 #     xhost + && docker run --network=host --env DISPLAY=$DISPLAY lvgl
 
-FROM ubuntu:16.04
+FROM ovidiudragoi/ffmpeg-build-ubuntu-20.04
 
 
 WORKDIR /lv
@@ -50,11 +50,11 @@ RUN      buildDeps="autoconf \
         apt-get install -yq --no-install-recommends ${buildDeps}
 
 ENV DISPLAY=:0
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ffmpeg/lib/:/opt/ffmpeg/lib64/
+# COPY . /lv
 
-COPY . /lv
+# RUN DIR=build && \
+#     mkdir -p ${DIR}; \
+#     cd ${DIR} && cmake .. && cmake --build .
 
-RUN DIR=build && \
-    mkdir -p ${DIR}; \
-    cd ${DIR} && cmake .. && cmake --build .
-
-CMD ["./build/main"]
+# CMD ["./build/main"]

@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  ubuntu-20.04:
+    container_name: ubuntu20.04
+    restart: on-failure
+    command: "sh /lv/init.sh"
+    build:
+      context: .
+    image: ubuntu-20.04
+    volumes:
+      - .:/lv
+    environment:
+      - DISPLAY=192.168.1.208:0
+

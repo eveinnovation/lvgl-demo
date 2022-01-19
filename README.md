@@ -93,3 +93,11 @@ gcc -I/home/ovidiu/c++/ffmpeg/include/ -L/home/ovidiu/c++/ffmpeg/lib/ main.c \
 
 
 To run sdl app from docker: docker run -e DISPLAY=192.168.1.191:0 --privileged lvgl
+
+docker container rm $(docker container ls -aq) -f
+
+to run docker first:
+
+# docker-compose  build --no-cache
+# docker container rm $(docker container ls -aq) -f 
+# docker-compose up 
